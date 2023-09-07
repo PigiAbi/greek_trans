@@ -1,0 +1,325 @@
+{{ block title }}
+    Practice Transcription {{ player.round_number }} of {{  player.participant.collected_responses }}
+{{ endblock }}
+
+
+
+{{ block content }}
+
+    {{ if form.errors and form.tran_submitted_answer.errors }}
+        <div class="otree-form-errors alert alert-danger">
+            {{ form.tran_submitted_answer.errors }}
+        </div>
+    {{ endif }}
+
+    <div class = "instructions well well-ig">
+
+    <p>
+        Please transcribe the row of Greek letters by selecting the appropriate letters.
+        Press 'Submit Transcription' when you wish to submit your response.
+    </p>
+    <p>
+        You will have 3 chances to complete each transcription.
+        If you fail to complete the transcription within three tries you will be shown a different one.
+    </p>
+
+    </div>
+
+    <br/>
+	<img src="{{ static image_path }}"/>
+
+    <div style="line-height:200%;">
+        <br>
+    </div>
+
+    <div align="center">
+
+         <table width=100% cellpadding=0 cellspacing=0 style='border:2px solid black'>
+             <tr>
+                 <td>
+                     <table width=100% cellpadding=0 cellspacing=0 border=0>
+                         <tr>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position1' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position2' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position3' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position4' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position5' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position6' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position7' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position8' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position9' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position10' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position11' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position12' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position13' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position14' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position15' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position16' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position17' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position18' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position19' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position20' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position21' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position22' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position23' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position24' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position25' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position26' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position27' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position28' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position29' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position30' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position31' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position32' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position33' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position34' width=100%></td>
+                             <td width=2.857%><img src="{{ static "pics/placeholder_big.png" }}" id='position35' width=100%></td>
+                        </tr>
+                     </table>
+                </td>
+             </tr>
+         </table>
+
+    </div>
+
+    <div align="left">
+        <div align="center">
+           <div class="form-group required">
+                <div class="controls  field-tran_submitted_answer">
+                    <input required type="hidden" name="tran_submitted_answer" id="id_tran_submitted_answer"/>
+                </div>
+           </div>
+        </div>
+    </div>
+
+    <br/>
+
+    <p align="center">
+        Please select from the following characters to enter your transcription.
+    </p>
+
+    <div align="center">
+        <table id="dictionary" cellpadding=0 cellspacing=0 border="10px" >
+                <tr>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/a2.png" }}"  onclick='addLetter("a")' alt="a"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/b2.png" }}"  onclick='addLetter("b")' alt="b"/>
+                        </div>
+                    </td>
+                   <td style="border-width: thick">
+                       <div class="relative">
+                           <img src="{{ static "pics/c2.png" }}" onclick='addLetter("c")' alt="c"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/d2.png" }}"  onclick='addLetter("d")' alt="d"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/e2.png" }}" onclick='addLetter("e")' alt="e"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/f2.png" }}" onclick='addLetter("f")' alt="f"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/g2.png" }}" onclick='addLetter("g")' alt="g"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/h2.png" }}" onclick='addLetter("h")' alt="h"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/i2.png" }}" onclick='addLetter("i")' alt="i"/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/k2.png" }}" onclick='addLetter(".")' alt="."/>
+                        </div>
+                    </td>
+                    <td style="border-width: thick">
+                        <div class="relative">
+                            <img src="{{ static "pics/back.png" }}"  onclick='dropLetter()' alt="del"/>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+        </table>
+
+    </div>
+
+    <br/><br/>
+
+    <!-- submit button including enforcement of answers by checking if hidden input fields have been updated -->
+    <input type="submit" class="btn btn-primary" value="Submit Transcription" id="proceed" onclick="submitTranscription()" style="margin-top: 20px; margin-right: 20px; background-color: #7bcdca; border-color: #85b5b3" />
+    <input type="submit" class="btn btn-primary" value="Quit Practice Transcriptions and Exit Study" id="skip" onclick="enforce_exit(event)" style="margin-top: 20px; background-color: #939ba9; border-color: #767a81" formnovalidate />
+
+    <!-- hidden input field to store participant's decision -->
+    <input type="hidden" name="continuation_choice" id="continuation_choice" />
+
+    <br>
+    <div align="center">
+        <span id="messageText">  </span>
+    </div>
+
+{{ endblock }}
+
+
+{{ block app_styles }}
+<!--  -----  -->
+<!--  STYLES -->
+<!--  -----  -->
+
+
+    <style>
+
+        input[type="submit"] {
+                white-space: normal;
+                width: 250px;
+                padding: 20px;
+                height: 100px;
+            }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            width: auto\9; /* ie8 */
+        }
+        .relative{float:left; position:relative;}
+
+        #dictionary {
+          border-spacing:5px 0px;
+          border: 10px  black;
+          border-collapse: separate;
+
+        }
+
+    </style>
+
+{{ endblock }}
+
+
+{{ block scripts }}
+<!--  -----  -->
+<!-- SCRIPTS -->
+<!--  -----  -->
+
+    <script>
+
+        //  Passing data from Python to JavaScript using js_vars
+        let failure_fee  = js_vars.failure_fee ;
+
+        // initialize transcriptionArray object
+        $(document).ready( function () {
+          transcriptionArray=[];
+        });
+
+        function enforce_exit(event) {
+
+            if (confirm('Are you sure you want to quit the practice transcriptions and exit this study? This means you will only ' +
+                'earn a reduced participation fee of $' + failure_fee.toString() + ' and will not be eligible for any additional compensation for this study.')) {
+                document.getElementById("continuation_choice").value = "Quit" ;
+                document.getElementById("id_tran_submitted_answer").value="Quit" ;
+                return true;
+            } else {
+                event.preventDefault() ;
+                return false ;
+            }
+
+        }
+
+         function reset_text() {
+             document.getElementById("messageText").innerHTML = "";
+         }
+
+          function deleteTranscription() {
+                transcriptionArray.length = 0;
+                var i;
+                for(i=1; i<=34; i++) {
+                    var positionImageId="position"+i;
+                    var blank_source= '{{ static  "pics/placeholder.png" }}'
+                    document.getElementById(positionImageId).src = blank_source;
+                }
+          }
+
+         function addLetter(letter) {
+
+            document.getElementById("messageText").innerHTML = "";
+            var letterArray=["a", "b", "c", "d", "h", "i", "."];
+            var let_len=letterArray.length
+            if (transcriptionArray.length<35){
+                transcriptionArray.push(letter);
+                var positionImageId="position"+transcriptionArray.length;
+                switch (letter) {
+                    case 'a':
+                        var fullPath= '{{ static  "pics/a.png" }}';
+                        break;
+                    case 'b':
+                        var fullPath= '{{ static  "pics/b.png" }}';
+                        break;
+                    case 'c':
+                        var fullPath= '{{ static  "pics/c.png" }}';
+                        break;
+                    case 'd':
+                        var fullPath= '{{ static  "pics/d.png" }}';
+                        break;
+                    case 'e':
+                        var fullPath= '{{ static  "pics/e.png" }}';
+                        break;
+                    case 'f':
+                        var fullPath= '{{ static  "pics/f.png" }}';
+                        break;
+                    case 'g':
+                        var fullPath= '{{ static  "pics/g.png" }}';
+                        break;
+                    case 'h':
+                        var fullPath= '{{ static  "pics/h.png" }}';
+                        break;
+                    case 'i':
+                        var fullPath= '{{ static  "pics/i.png" }}';
+                        break;
+                    case '.':
+                        var fullPath= '{{ static  "pics/k.png" }}';
+                        break;
+                }
+
+                document.getElementById(positionImageId).src = fullPath;
+                reset_text();
+            }
+         }
+
+         function dropLetter() {
+            if (transcriptionArray.length>0) {
+                var positionImageId = "position" + transcriptionArray.length;
+                transcriptionArray.pop();
+                var blank_source= '{{ static  "pics/placeholder.png" }}'
+                document.getElementById(positionImageId).src = blank_source;
+            }
+
+         }
+
+         function submitTranscription(){
+            var transcribedAnswer=transcriptionArray.join("")
+            document.getElementById("id_tran_submitted_answer").value=transcribedAnswer ;
+            document.getElementById("continuation_choice").value = "Proceed" ;
+         }
+
+    </script>
+
+{{ endblock }}
